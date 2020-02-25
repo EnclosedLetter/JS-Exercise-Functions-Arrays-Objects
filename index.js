@@ -183,7 +183,7 @@ const get = inventory.find((item, index)=> index === index);
  * getLastCarInfo takes a single argument:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * --Does this mean we have to reference the array by module.exports? // You don't because it will 
- * give it an error. Why reference it?
+ * give it an error. Why reference it? Is it just a shortened list is what it looks like
  * getLastCarInfo returns a string in the format `This is a {car_make} {car_model}
  * 
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
@@ -209,8 +209,14 @@ function getLastCarInfo(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+
+// --The second paramater is no longer "index" because we are not trying to find something by the index, rather the ID.
+// Need HELP
+function getCarInfoById(/*inventory. id*/) {
+  // const idTest = inventory.find (function(item, id)){
+  //   return id===id
+  // }
+  // return `This is a ${idTest.car_make} ${idTest.car_model}`
 }
 
 /**
@@ -221,8 +227,11 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(inventory) {
+  // const decrease = inventory.car_model.sort(function(){
+
+  // })
+  return inventory.sort
 }
 
 /**
@@ -287,9 +296,9 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => a+b; // code here! // const sum = (a, b) => a+b
+const addFive = num => num+5; // code here! // const addFive = num => num+5
+const argTimesTwo = num => num*2; // code here! // const argTimesTwo = num => num*2
 
 /**
  * ### Challenge `carMaker`
