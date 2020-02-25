@@ -308,8 +308,8 @@ function getOlderCars(/*inventory, year*/) {
 */
 function getGermanCars(inventory) {
   /* code here */
-  return carArr= []
-  
+  // return carArr= []
+
 }
 
 /**
