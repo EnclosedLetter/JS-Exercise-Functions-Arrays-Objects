@@ -88,10 +88,10 @@ function makeSmartPerson(nameParam) {
       return a+b;
     },
     speak: function(){
-      return `Hello, my name is ${nameParam}`
+      return `Hello, my name is ${nameParam}`;
 
     }
-  }
+  };
 }
 
 console.log(makeSmartPerson("Luis").speak())
@@ -137,6 +137,14 @@ function get3rdCar(inventory) {
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
 }
 
+// function get3rdCar(inventory) {
+//   const the3rd = inventory.find((item, index) => {
+//     return index === 2 // we use 2 because index is zero-based.
+//   })
+//   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
+// }
+
+
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -156,6 +164,10 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  const choose = inventory.find((item, index) => {
+    return index === index;
+  });
+  return `The car is a ${choose.car_make} ${choose.car_model}`
 }
 
 /**
