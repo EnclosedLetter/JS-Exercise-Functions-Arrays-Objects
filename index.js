@@ -94,7 +94,7 @@ function makeSmartPerson(nameParam) {
   };
 }
 
-console.log(makeSmartPerson("Luis").speak())
+// console.log(makeSmartPerson("Luis").speak())
 
 
 
@@ -137,12 +137,6 @@ function get3rdCar(inventory) {
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
 }
 
-// function get3rdCar(inventory) {
-//   const the3rd = inventory.find((item, index) => {
-//     return index === 2 // we use 2 because index is zero-based.
-//   })
-//   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
-// }
 
 
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -164,10 +158,22 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
-  const choose = inventory.find((item, index) => {
-    return index === index;
-  });
-  return `The car is a ${choose.car_make} ${choose.car_model}`
+  // --This is before we change this to arrow function
+  // const get = inventory.find(function(item, index){
+  //   return index === index;
+  // });
+  // --Don't forget to add $
+// return `This is a ${get.car_make} ${get.car_model}`
+// This is arrow function, you remove the function word and add an arrow after the parameters
+// You can then get rid of {}, return (if you are only returning one thing), and the ";" after index
+const get = inventory.find((item, index)=> index === index);
+  return `This is a ${get.car_make} ${get.car_model}`
+
+
+  // const grab = inventory.find((item, index) => {
+  //   return index === index; //don't understand this part.
+  // });
+  // return `The car is a ${grab.car_make} ${grab.car_model}`
 }
 
 /**
@@ -176,13 +182,19 @@ function getCarInfoByIndex(inventory, index) {
  * @instructions
  * getLastCarInfo takes a single argument:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
+ * --Does this mean we have to reference the array by module.exports? // You don't because it will 
+ * give it an error. Why reference it?
  * getLastCarInfo returns a string in the format `This is a {car_make} {car_model}
  * 
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  // --Don't forget to put .length, because you want the length of the array. What exactly does the 
+  // -1 do? I know it does it so it takes one away from the Array, but what number? The one at the end?
+
+  let lastCar = inventory[inventory.length -1]
+  return `This is a ${lastCar.car_make} ${lastCar.car_model}`
 }
 
 /**
