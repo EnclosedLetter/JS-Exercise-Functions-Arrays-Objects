@@ -212,7 +212,18 @@ function getLastCarInfo(inventory) {
 
 // --The second paramater is no longer "index" because we are not trying to find something by the index, rather the ID.
 // Need HELP
-function getCarInfoById(/*inventory. id*/) {
+function getCarInfoById(inventory, id) {
+  
+  // start
+
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].id === id) {
+      return `This is a ${inventory[i].car_make} ${inventory[i].car_model}`;
+    }
+  }
+
+  // end
+
   // const idTest = inventory.find (function(item, id)){
   //   return id===id
   // }
@@ -228,10 +239,15 @@ function getCarInfoById(/*inventory. id*/) {
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
 function sortCarInventory(inventory) {
+  // start
+
+ 
+
+  // end
   // const decrease = inventory.car_model.sort(function(){
 
   // })
-  return inventory.sort
+  // return inventory.sort
 }
 
 /**
