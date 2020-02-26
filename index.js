@@ -214,12 +214,12 @@ function getLastCarInfo(inventory) {
 // Need HELP
 // Do you have to use id as the param? I thought they are basically just place holders, why can't you change it? as long as you're consistent it should work?
 // If inventory is a banana wrd, how does it know it's refereancing to the inventory array?
-function getCarInfoById(banana, id) {
+function getCarInfoById(banana, ide) {
   
   // start
 
   for (let i = 0; i < banana.length; i++) {
-    if (banana[i].id === id) {
+    if (banana[i].id === ide) {
       return `This is a ${banana[i].car_make} ${banana[i].car_model}`;
     }
   }
@@ -283,17 +283,28 @@ function getModelYears(inventory) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/*inventory, year*/) {
-  /* code here */
-  // --This will create a new array
-  // let oldCars = [];
-  // for(let i = 0; i < inventory.length; i++) {
-  //   if(inventory[i].car_year <= year) {
-  //     oldCars.push(inventory[i]);
-  //   }
-  // }
-  // return oldCars;
+
+
+// if (a > 0) {
+//   return "positive";
+// } else {
+//   return "NOT positive";
+// }
+
+function getOlderCars(inventory, year) {
+ let oldCars = []
+  for (let i=0; i<inventory.length; i++){
+    if (inventory[i].car_year <= year){
+      oldCars.push(inventory[i]);
+    }
+  }
+  return oldCars;
 }
+
+// let oldCars = [];
+  // for (let i=0; i < inventory.length ; i++){
+  //     if (inventory[i]. )
+  // }
 
 /**
  * ### Challenge `getGermanCars`
