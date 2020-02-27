@@ -243,7 +243,15 @@ function getCarInfoById(banana, ide) {
 function sortCarInventory(inventory) {
   // start
 
- 
+ return inventory.sort((a, b) => {
+    if (a.car_model < b.car_model){
+      return -1;
+    }
+    if (a.car_model > b.car_model) {
+      return 1;
+    }
+    return 0;
+  });
 
   // end
   // const decrease = inventory.car_model.sort(function(){
